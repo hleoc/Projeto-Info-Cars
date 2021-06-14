@@ -22,9 +22,9 @@ Atributos de um Carro são:
 1. Crie uma pasta para onde o projeto será clonado
 
 2. Clone o repositório
-  * ``.
+  * `git clone git@github.com:hleoc/Projeto-Info-Cars.git`.
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd `
+    * `cd Projeto-Info-Cars`
 
 3. Instale as dependências
   * `npm install`
@@ -57,6 +57,7 @@ O Projeto Info Cars será realizado utilizando o XXXXXXXXX como banco de dados.
 
 ## Tecnologias utilizadas
 VSCode
+Docker
 JavaScript
 TypeScrip
 TypeORM
