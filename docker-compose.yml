@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  app:
+    image: node:14-alpine3.11
+    command: npm run dev
+    working_dir: /app
+    container_name: info-api
+    restart: always
+    environment:
+      - NODE_ENV=dev-docker
+    volumes:
+      - ./:/app
+    ports:
+      - 3000:3000
+    links:
+      - db
+
+  db:
+    image: postgres:latest
+    container_name: info_postgres
+    restart: always
+    volumes:
+      - ./.docker/pg/data:/var/lib/postgresql/data
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_DB=info
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=passw
