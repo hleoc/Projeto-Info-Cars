@@ -1,0 +1,37 @@
+{
+  "name": "infoSistemas",
+  "version": "1.0.0",
+  "description": "Aqui serão encontrados os detalhes do Projeto Info Cars 🚀",
+  "main": "index.js",
+  "scripts": {
+    "start": "node && copyfiles dist/src/shared/infra/http/server.js",
+    "dev": "ts-node-dev -r tsconfig-paths/register  --inspect --transpile-only --ignore-watch node_modules ./src/shared/infra/http/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hleoc/Projeto-Info-Cars.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hleoc/Projeto-Info-Cars/issues"
+  },
+  "homepage": "https://github.com/hleoc/Projeto-Info-Cars#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.12",
+    "@types/cors": "^2.8.10",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.3.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "path": "^0.12.7",
+    "reflect-metadata": "^0.1.13",
+    "ts-node-dev": "^1.1.6"
+  }
+}
