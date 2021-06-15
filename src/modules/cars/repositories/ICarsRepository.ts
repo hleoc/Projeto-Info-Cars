@@ -5,4 +5,5 @@ export default interface ICarsRepository {
   getAllCars(): Promise<Car[]>;
   create(data: ICreateCarDTO): Promise<Car>;
   getById(id: string): Promise<Car | undefined>;
+  save(car: Car): Promise<Car>;
 }
