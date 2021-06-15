@@ -30,6 +30,10 @@ class CarsRepository implements ICarsRepository {
     return car;
   }
 
+  public async save(car: Car): Promise<Car> {
+    return this.ormRepository.save(car);
+  }
+
 }
 
 export default CarsRepository;
