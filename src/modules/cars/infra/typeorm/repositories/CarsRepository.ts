@@ -23,6 +23,13 @@ class CarsRepository implements ICarsRepository {
 
     return car;
   }
+
+  public async getById(id: string): Promise<Car | undefined> {
+    const car = await this.ormRepository.findOne(id);
+
+    return car;
+  }
+
 }
 
 export default CarsRepository;
