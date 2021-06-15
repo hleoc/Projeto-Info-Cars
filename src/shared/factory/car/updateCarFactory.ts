@@ -4,7 +4,7 @@ import UpdateCarService from "@modules/cars/services/UpdateCarService";
 export const updateCarFactory = () => {
   const carsRepository = new CarsRepository();
 
-  const address = new UpdateCarService(carsRepository);
+  const car = new UpdateCarService(carsRepository);
 
-  return address;
+  return car;
 };

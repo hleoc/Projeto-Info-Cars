@@ -4,6 +4,7 @@ import { listCarFactory } from "@shared/factory/car/listCarFactory";
 import { createCarFactory } from "@shared/factory/car/createCarFactory";
 import { showCarFactory } from "@shared/factory/car/showCarFactory";
 import { updateCarFactory } from "@shared/factory/car/updateCarFactory";
+import { deleteCarFactory } from "@shared/factory/car/deleteCarFactory";
 
 class CarsController {
   public async index(_request: Request, response: Response) {
@@ -42,6 +43,16 @@ class CarsController {
     const car = await updateCar.execute({ ...carData, car_id });
 
     return response.status(200).json({ success: true, car });
+  }
+
+  public async delete(request: Request, response: Response) {
+    const car_id = request.params.id;
+
+    const deleteCar = deleteCarFactory();
+
+    await deleteCar.execute(car_id);
+
+    return response.status(204).json();
   }
 }
 

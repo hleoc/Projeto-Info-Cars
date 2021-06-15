@@ -4,7 +4,7 @@ import CreateCarService from "@modules/cars/services/CreateCarService";
 export const createCarFactory = () => {
   const carsRepository = new CarsRepository();
 
-  const culture = new CreateCarService(carsRepository);
+  const car = new CreateCarService(carsRepository);
 
-  return culture;
+  return car;
 };
