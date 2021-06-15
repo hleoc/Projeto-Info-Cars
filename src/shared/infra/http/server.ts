@@ -6,12 +6,15 @@ import express, { NextFunction, Request, Response } from "express";
 
 import cors from "cors";
 
+import routes from "./routes";
+
 import ErrorsApp from "@shared/errors/ErrorsApp";
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(routes);
 
 const port = process.env.APP_PORT;
 
