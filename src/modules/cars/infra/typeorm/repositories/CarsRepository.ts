@@ -34,6 +34,10 @@ class CarsRepository implements ICarsRepository {
     return this.ormRepository.save(car);
   }
 
+  public async delete(id: string): Promise<void> {
+    await this.ormRepository.delete(id);
+    return;
+  }
 }
 
 export default CarsRepository;
