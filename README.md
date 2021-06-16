@@ -1,10 +1,8 @@
 # Boas vindas ao repositório do Projeto Info Cars!
-
 Aqui serão encontrados os detalhes de como o projeto foi estruturado. #vqv 🚀
 
 
 ## Cenário fictício
-
 Info Cars está lançando uma nova plataforma de vendas de carro. Nesta plataforma, é realizado o cadastro de novos carros para os clientes consultarem.
 
 Atributos de um Carro são:
@@ -18,7 +16,6 @@ Atributos de um Carro são:
 
 
 ## Instruções para a instalação do projeto:
-
 1. Crie uma pasta para onde o projeto será clonado
 
 2. Clone o repositório
@@ -29,31 +26,48 @@ Atributos de um Carro são:
 3. Instale as dependências
   * `npm install`
 
-4. Em uma aba do terminal rode o servidor do NodeJs
-  * npm run dev
+4. Configure um arquivo .env com as seguintes variáveis de ambiente
+APP_PORT=3000
+POSTGRES_DB_NAME=
+POSTGRES_DB_USERNAME=
+POSTGRES_DB_PASSWORD=
+POSTGRES_DB_DATABASE=
+NODE_ENV=dev
 
+## Criação do Banco de Dados com Docker 🐳
+Execute o seguinte comando no terminal para criar uma imagem com o banco de dados PostgreSQL:
 
-## Instruções para testar o projeto:
-- Abra um novo terminal e digite o comando
-  * `npm test`
-OBS: a aplicação deve estar rodando.
+```bash
+docker-compose up --force-recreate
+```
+- OBS: Após a execução a imagem info-api será gerada no seu Docker e o servidor será executado.
+
+- Se estiver tudo funcionando corretamente aparecerá a seguinte mensagem no terminal: Back-end started on localhost:3000! 🚀
+
+- Se estiver tudo funcionando corretamente aparecerá a seguinte mensagem na rota http://localhost:3000/ : InfoSistemas-API 2021
+
+## Criando a estrutura básica do Banco de Dados 🐘
+Para criar as tabelas no banco de dados, execute o seguinte comando:
+
+```bash
+npm run typeorm migration:run
+```
 
 ## O que foi desenvolvido no back-end
-
 Foi desenvolvida uma API utilizando a arquitetura RESTful!
 
 Nesse projeto é possível Criar, Listar todos os veículos, Editar, Visualizar um carro específico e Deletar um carro específico(ou `CRUD`, para os mais íntimos 😜).
 
 O projeto deve rodar na porta 3000 no back-end.
 
-### Data de Entrega
 
+### Data de Entrega
 O projeto tem até a seguinte data para ser entregue: `15/06/2021`.
 
 
 ## Requisitos Obrigatórios:
+- É necessário ter o Docker instalado no computador para rodar o projeto. 
 
-O Projeto Info Cars será realizado utilizando o XXXXXXXXX como banco de dados.
 
 ## Tecnologias utilizadas
 VSCode
@@ -62,7 +76,12 @@ JavaScript
 TypeScrip
 TypeORM
 NodeJS
+DBeaver
 Postman
 Git/Github
 Arquitetura RESTful
 
+
+## Melhorias Futuras
+- Criar projeto front-end utilizando a tecnologia Angular 5+
+- Criar teste unitários utilizando Mocha (Node) para cada uma das operações (create, read, update, delete)
